@@ -39,7 +39,8 @@ Complete la tabla:
 
 | Integrante | github nick |
 |------------|-------------|
-|            |             |
+|       Gil Castellanos Luis Ernesto     |        luegilca     |
+|       Martínez Beltrán Juan Sebastián     |  juasmartinezbel          |
 
 ## Entrega
 
