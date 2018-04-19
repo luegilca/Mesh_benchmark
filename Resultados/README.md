@@ -37,4 +37,4 @@ Medir el rendimiento del programa en diferentes configuraciones de Hardware.
 |Janus  | 2 cores | 64 bits |2.7GHz|6.0 GB| Linux |
 
 
-![Results 4](./dummy_results.png)
+![Results 4](./results_JANUS.png)

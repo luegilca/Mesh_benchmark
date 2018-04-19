@@ -24,6 +24,7 @@
  * Press 'f' to change the figure of the mesh
  * Press 'h' to screenshot the results
  * Press 'o' to see the bounding sphere
+ * Press 'c' to enable/disable frustum culling
  */
 
 import frames.input.*;
@@ -50,7 +51,7 @@ int mode;
 // 1. Face-Vertex
 int representation;
 
-int initBoidNum = 50; // amount of boids to start the program with
+int initBoidNum = 100; // amount of boids to start the program with
 int scaleFactor = 5; //scale factor for vertices in PShape
 ArrayList<Boid> flock;
 Node avatar;
@@ -58,6 +59,8 @@ PShape shape[] = new PShape[3];
 boolean animate = true;
 boolean retained = true;
 boolean boundingSphere = false;
+boolean frustumCulling = false;
+float boundSphereRadius = 18.0; //Only for tetrahedron
 
 final String FILEPATH [] = {"shape.obj", "Arwing.obj", "KillerBee.obj"};
 
@@ -216,6 +219,9 @@ void keyPressed() {
       break;
     case 'f':
       figure = figure < 2 ? figure+1 : 0;
+      break;
+    case 'c':
+      frustumCulling = !frustumCulling;
       break;
     case 'h':
       saveFrame("results-#####.png");

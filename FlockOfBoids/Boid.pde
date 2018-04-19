@@ -24,7 +24,13 @@ class Boid {
       public void visit() {
         if (animate)
           run(flock);
-        render();
+        if( frustumCulling ){
+          Graph.Visibility vis = scene.ballVisibility(position, boundSphereRadius);
+          if( vis == Graph.Visibility.VISIBLE )
+            render();     
+        }
+        else
+          render();
       }
 
       // Behaviour: tapping over a boid will select the node as
@@ -198,7 +204,7 @@ class Boid {
       pushStyle();
       noStroke();
       fill(0, 255, 255, 100);
-      sphere(18);
+      sphere(boundSphereRadius);
       popStyle();
     }
     popStyle();
